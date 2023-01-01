@@ -11,10 +11,11 @@ from PyPDF2 import PdfReader
 reader = PdfReader('vocabulary.pdf')
 numberOfPages = len(reader.pages)
 for i in range(numberOfPages):
-    text = page.extract_text()
     page = reader.pages[i]
+    text = page.extract_text()
     # so this is the point where we are getting the page extracted as a text
     # i think we need another for loop to extract the information from the page we gotytujtyujopijaerfg9oi
-    
+    if i < 1:
+        print(text)
 
 print(numberOfPages)
