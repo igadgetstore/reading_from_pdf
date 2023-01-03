@@ -1,0 +1,2 @@
+so we ran across the problem of separating the words in the page 
+and the main aim we have right now is to separate the korean words from uzbek ones
