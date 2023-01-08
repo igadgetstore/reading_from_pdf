@@ -1,2 +1,3 @@
-so we ran across the problem of separating the words in the page 
-and the main aim we have right now is to separate the korean words from uzbek ones
+we have the new aim and it is:
+identifying the korean words and pairing the with their translation to the chosen language
+

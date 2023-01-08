@@ -9,18 +9,27 @@ from PyPDF2 import PdfReader
 
 # lets import naturall language detection library called langdetect
 import langdetect
-# this is the papchake that is unknowen to support uzbek language
 # we have to immport the documentation to the text file
+
+from googletrans import Translator
+translator = Translator(
+)
 
 reader = PdfReader('vocabulary.pdf')
 numberOfPages = len(reader.pages)
-for i in range(numberOfPages):
-    page = reader.pages[i]
-    text = page.extract_text()
-    # so this is the point where we are getting the page extracted as a text
-    # i think we need another for loop to extract the information from the page we gotytujtyujopijaerfg9oi
-    print(type(text))
 
 
-print(numberOfPages) 
-open('theTxtfile.txt', 'w')
+page = reader.pages[1]
+text = page.extract_text()
+words = text.split()
+for i in range(2):
+    for word in words:
+        if langdetect.detect(word) != 'ko':
+            words.remove(word)
+
+print(words, len(words), sep='\n')
+
+translations = translator.translate(words, dest='uz')
+# print(translations.text)
+for translation in translations:
+    print(translation.origin, '=>', translation.text)
