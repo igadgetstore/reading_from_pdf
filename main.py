@@ -31,5 +31,7 @@ print(words, len(words), sep='\n')
 
 translations = translator.translate(words, dest='uz')
 # print(translations.text)
-for translation in translations:
-    print(translation.origin, '=>', translation.text)
+# for translation in translations:
+#     print(translation.origin, '=>', translation.text)
+
+print(type(translations))
